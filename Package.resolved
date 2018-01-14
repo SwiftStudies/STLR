@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "OysterKit",
+        "repositoryURL": "https://github.com/SwiftStudies/OysterKit.git",
+        "state": {
+          "branch": null,
+          "revision": "87a0719741bc2da157e5339147eacca32f68e2a1",
+          "version": "0.1.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
