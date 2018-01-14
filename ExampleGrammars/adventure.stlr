@@ -1,0 +1,21 @@
+//
+// A grammar for a simple adventure game
+//
+
+direction  		   = "EAST" | "WEST" | "NORTH" | "SOUTH"
+
+object		   	   = "SWORD" | "CLUB"
+animal			   = "SNAKE" | "KITTEN"
+scenery			   = "STREAM" | "TREE" | "TAPESTRY"
+
+collectable		   = object | animal
+examineable		   = object | animal | scenery
+
+move    = "GO"      .whitespaces direction
+pickup  = "PICKUP"  .whitespaces collectable
+drop    = "DROP"    .whitespaces collectable
+attack  = "ATTACK"  .whitespaces animal .whitespaces 
+          "WITH"    .whitespaces object
+examine = "EXAMINE" .whitespaces examineable
+
+command = move | pickup | drop | attack | examine
