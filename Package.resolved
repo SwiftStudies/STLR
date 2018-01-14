@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "CommandKit",
+        "repositoryURL": "https://github.com/SwiftStudies/CommandKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "20c1210b5fc82183b1e6d8a6b4eec300e03045cf",
+          "version": null
+        }
+      },
+      {
         "package": "OysterKit",
         "repositoryURL": "https://github.com/SwiftStudies/OysterKit.git",
         "state": {
