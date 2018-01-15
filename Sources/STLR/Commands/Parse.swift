@@ -44,7 +44,19 @@ class ParseCommand : Command, IndexableOptioned, IndexableParameterized, Grammar
     }
     
     override func run() -> RunnableReturnValue {
-        print("Parsed y'all")
+        guard let grammar = grammar else {
+            print("Could not load grammar \(grammarUrl?.path ?? "file note specified")")
+            return RunnableReturnValue.failure(error: GrammarOption.Errors.couldNotParseGrammar, code: -1)
+        }
+
+        if interactiveMode {
+            
+        } else {
+            let input = String(contentsOfFile: inputFiles[0].path, encoding: String.Encoding.utf8)
+            
+            
+        }
+        
         return RunnableReturnValue.success
     }
 }
