@@ -1,0 +1,46 @@
+//
+// A more advanced adventure grammar
+//
+
+// Verbs
+//
+verb      = "ATTACK" | "PICKUP" | "DROP" | "GO" | 
+            "LOOK" | "EXAMINE" | "USE"
+
+// Nouns
+//
+scenary   = "STREAM" | "TREE" | "BOULDER" | "SKY" | 
+            "CLOUD" | "GRASS" | "MUD" | "PATH"
+animal    = "CAT" | "DOG" | "SNAKE" | "DRAGON" | 
+            "GERBIL" | "FISH" | "KITTEN"
+object    = "SWORD" | "CLUB" | "KEY" | "COIN" | 
+            "BRANCH" | "WATCH"
+direction = "NORTH" | "SOUTH" | "EAST" | "WEST" | 
+            "UP" | "DOWN" | "IN" | "OUT" | "INSIDE" | 
+            "OUTSIDE" 
+noun      = scenary | animal | object | direction
+
+// Adjectives
+//
+color     = "RED" | "GREEN" | "BLUE" | "YELLOW" | 
+            "PURPLE" | "BLACK" | "WHITE" | "GREY" |
+            "ORANGE" | "BROWN" | "GOLD"
+
+material  = "BRASS" | "IRON" | "WOODEN"
+texture   = "FLUFFY" | "ROUGH" | "SHARP" | "BLUNT"
+state     = "SLEEPING" | "ANGRY" | "HAPPY" | "RUSTY" 
+shape     = "ROUND" | "SQUARE" | "TRIANGULAR"
+adjective = color | texture | state | shape | material
+@pin
+adjectives= (adjective ws)*
+
+// Prepositions
+//
+preposition = "WITH" | "ON" | "IN" | "TO" | "OUT" | "UNDER"
+
+// Commands
+//
+subject   = adjectives noun
+@void ws  = .whitespaces
+
+command   = verb (ws subject (ws preposition ws subject)? )?

@@ -11,11 +11,15 @@ scenery			   = "STREAM" | "TREE" | "TAPESTRY"
 collectable		   = object | animal
 examineable		   = object | animal | scenery
 
-move    = "GO"      .whitespaces direction
-pickup  = "PICKUP"  .whitespaces collectable
-drop    = "DROP"    .whitespaces collectable
-attack  = "ATTACK"  .whitespaces animal .whitespaces 
-          "WITH"    .whitespaces object
-examine = "EXAMINE" .whitespaces examineable
+manipulate        = "PICKUP" | "DROP"
+locate            = "GO" | "MOVE"
+assault           = "ATTACK" | "KILL"
+look			  = "LOOK AT" | "EXAMINE"
+
+move       = locate      .whitespaces direction
+inventory  = manipulate  .whitespaces collectable
+attack     = assault     .whitespaces animal       .whitespaces 
+             "WITH"      .whitespaces object
+examine    = look .whitespaces examineable
 
 command = move | pickup | drop | attack | examine

@@ -51,8 +51,15 @@ class ParseCommand : Command, IndexableOptioned, IndexableParameterized, Grammar
         super.init("parse", description: "Parses a set of input files using the supplied grammar", options: Options.all, parameters: Parameters.all)
     }
     
+    func prettyPrint(source:String, contents:[HeterogeneousNode], indent : String = ""){
+        for node in contents {
+            print("\(indent)\(node.token) '\(node.stringValue(source: source))'")
+            prettyPrint(source:source, contents: node.children, indent: indent+"\t")
+        }
+    }
+    
     func parseInput(language:Language, input:String) throws {
-        let ast : DefaultHomogenousAST<HomogenousNode> = language.build(source: input)
+        let ast : DefaultHeterogeneousAST = language.build(source: input)
         
         guard ast.errors.count == 0 else {
             for error in ast.errors {
@@ -61,9 +68,7 @@ class ParseCommand : Command, IndexableOptioned, IndexableParameterized, Grammar
             throw Errors.couldNotParseInput
         }
         
-        for token in ast.tokens {
-            print("\(token)")
-        }
+        prettyPrint(source: input, contents: ast.tokens)
     }
     
     override func run() -> RunnableReturnValue {
