@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/SwiftStudies/CommandKit.git",
         "state": {
           "branch": "master",
-          "revision": "20c1210b5fc82183b1e6d8a6b4eec300e03045cf",
+          "revision": "ab82b1e8f530ddf980c484822bee1310591a5cfb",
           "version": null
         }
       },
@@ -14,9 +14,9 @@
         "package": "OysterKit",
         "repositoryURL": "https://github.com/SwiftStudies/OysterKit.git",
         "state": {
-          "branch": null,
-          "revision": "87a0719741bc2da157e5339147eacca32f68e2a1",
-          "version": "0.1.0"
+          "branch": "master",
+          "revision": "3f87f6c45ca9640e80ec33039fdfc16192d6177f",
+          "version": null
         }
       }
     ]
