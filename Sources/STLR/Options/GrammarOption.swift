@@ -54,6 +54,10 @@ class GrammarOption : Option, IndexableParameterized{
         
     }
     
+    enum Errors : Error {
+        case couldNotParseGrammar
+    }
+    
     init(){
         super.init(shortForm: "g", longForm: "grammar", description: "The grammar to use", parameterDefinition: Parameters.all, required: true)
     }
